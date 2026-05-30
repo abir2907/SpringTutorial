@@ -10,7 +10,10 @@ import org.springframework.stereotype.Component;
 public class Module1introductionApplication implements CommandLineRunner {
 
 	@Autowired
-	PaymentService paymentServiceObj;
+	PaymentService paymentServiceObj1;
+
+	@Autowired
+	PaymentService paymentServiceObj2;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Module1introductionApplication.class, args);
@@ -18,6 +21,11 @@ public class Module1introductionApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		paymentServiceObj.pay();
+
+		System.out.println(paymentServiceObj1.hashCode());
+		System.out.println(paymentServiceObj2.hashCode());
+
+		paymentServiceObj1.pay();
+		paymentServiceObj2.pay();
 	}
 }
