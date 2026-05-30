@@ -10,8 +10,11 @@ import org.springframework.stereotype.Component;
 @SpringBootApplication
 public class Module1introductionApplication implements CommandLineRunner {
 
-	@Autowired
-	NotificationService notificationServiceObj;
+	private final NotificationService notificationServiceObj;
+
+	public Module1introductionApplication(NotificationService notificationServiceObj) {
+		this.notificationServiceObj = notificationServiceObj; // Constructor Dependency Injection, the preferred way
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(Module1introductionApplication.class, args);
