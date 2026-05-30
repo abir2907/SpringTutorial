@@ -13,7 +13,7 @@ public class Module1introductionApplication implements CommandLineRunner {
 
 	private final NotificationService notificationServiceObj;
 
-	public Module1introductionApplication(@Qualifier("smsNotif") NotificationService notificationServiceObj) {
+	public Module1introductionApplication(NotificationService notificationServiceObj) {
 		this.notificationServiceObj = notificationServiceObj; // Constructor Dependency Injection, the preferred way
 	}
 
