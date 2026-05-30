@@ -7,12 +7,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
 @SpringBootApplication
-public class Module1introductionApplication {
+public class Module1introductionApplication implements CommandLineRunner {
+
+	@Autowired
+	PaymentService paymentServiceObj;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Module1introductionApplication.class, args);
+	}
 
-		PaymentService paymentServiceObj = new PaymentService();
+	@Override
+	public void run(String... args) throws Exception {
 		paymentServiceObj.pay();
 	}
 }
