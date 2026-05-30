@@ -2,6 +2,7 @@ package com.spring.abir.module1introduction;
 
 import com.spring.abir.module1introduction.impl.EmailNotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +13,7 @@ public class Module1introductionApplication implements CommandLineRunner {
 
 	private final NotificationService notificationServiceObj;
 
-	public Module1introductionApplication(NotificationService notificationServiceObj) {
+	public Module1introductionApplication(@Qualifier("smsNotif") NotificationService notificationServiceObj) {
 		this.notificationServiceObj = notificationServiceObj; // Constructor Dependency Injection, the preferred way
 	}
 
