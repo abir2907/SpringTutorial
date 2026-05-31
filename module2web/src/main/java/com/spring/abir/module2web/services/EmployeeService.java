@@ -5,8 +5,12 @@ import com.spring.abir.module2web.entities.EmployeeEntity;
 import com.spring.abir.module2web.repositories.EmployeeRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ReflectionUtils;
 
+import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -46,10 +50,26 @@ public class EmployeeService {
         return modelMapper.map(savedEmployeeEntity, EmployeeDTO.class);
     }
 
+    public boolean isExistsByEmployeeId(Long id) {
+        return employeeRepository.existsById(id);
+    }
+
     public boolean deleteEmployeeById(Long id) {
-        boolean exists = employeeRepository.existsById(id);
-        if(!exists) return false;
+        if(!isExistsByEmployeeId(id)) return false;
         employeeRepository.deleteById(id);
         return true;
+    }
+
+    public EmployeeDTO updatePartialEmployeeById(Map<String, Object> updates, Long id) {
+        boolean exists = employeeRepository.existsById(id);
+        if(!isExistsByEmployeeId(id)) return null;
+        EmployeeEntity employeeEntity = employeeRepository.findById(id).get();
+        updates.forEach((field, value) -> {
+            Field fieldToBeUpdated = ReflectionUtils.findField(EmployeeEntity.class, field);
+            fieldToBeUpdated.setAccessible(true);
+            ReflectionUtils.setField(fieldToBeUpdated, employeeEntity, value);
+        });
+        employeeRepository.save(employeeEntity);
+        return modelMapper.map(employeeEntity, EmployeeDTO.class);
     }
 }
