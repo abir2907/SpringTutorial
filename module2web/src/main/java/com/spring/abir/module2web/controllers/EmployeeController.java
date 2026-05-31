@@ -1,5 +1,6 @@
 package com.spring.abir.module2web.controllers;
 
+import com.spring.abir.module2web.dto.EmployeeDTO;
 import com.spring.abir.module2web.entities.EmployeeEntity;
 import com.spring.abir.module2web.services.EmployeeService;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/{employeeId}")
-    public EmployeeEntity getEmployeeById(@PathVariable(name = "employeeId") Long id) {
+    public EmployeeDTO getEmployeeById(@PathVariable(name = "employeeId") Long id) {
         return employeeService.getEmployeeById(id);
     }
 

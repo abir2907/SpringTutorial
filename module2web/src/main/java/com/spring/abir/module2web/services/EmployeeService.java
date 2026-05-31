@@ -1,7 +1,9 @@
 package com.spring.abir.module2web.services;
 
+import com.spring.abir.module2web.dto.EmployeeDTO;
 import com.spring.abir.module2web.entities.EmployeeEntity;
 import com.spring.abir.module2web.repositories.EmployeeRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +17,10 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public EmployeeEntity getEmployeeById(Long id) {
-        return employeeRepository.findById(id).orElse(null);
+    public EmployeeDTO getEmployeeById(Long id) {
+        EmployeeEntity employeeEntity = employeeRepository.findById(id).orElse(null);
+        ModelMapper mapper = new ModelMapper();
+        return mapper.map(employeeEntity, EmployeeDTO.class);
     }
 
     public List<EmployeeEntity> getAllEmployees() {
