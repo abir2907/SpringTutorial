@@ -24,15 +24,14 @@ public class EmployeeController {
     }
 
     @GetMapping()
-    public String getAllEmployees(@RequestParam(required = false) Integer age,
+    public List<EmployeeEntity> getAllEmployees(@RequestParam(required = false) Integer age,
                                   @RequestParam(required = false) String sortBy) {
-        return "Hi age " + age + ", sort by: " + sortBy;
+        return employeeRepository.findAll();
     }
 
     @PostMapping
-    public EmployeeDTO createNewEmployee(@RequestBody EmployeeDTO inputEmployee) {
-        inputEmployee.setId(100L);
-        return inputEmployee;
+    public EmployeeEntity createNewEmployee(@RequestBody EmployeeEntity inputEmployee) {
+        return employeeRepository.save(inputEmployee);
     }
 
     @PutMapping
