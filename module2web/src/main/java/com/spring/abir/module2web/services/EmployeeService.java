@@ -12,15 +12,16 @@ import java.util.List;
 public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
+    private final ModelMapper modelMapper;
 
-    public EmployeeService(EmployeeRepository employeeRepository) {
+    public EmployeeService(EmployeeRepository employeeRepository, ModelMapper modelMapper) {
         this.employeeRepository = employeeRepository;
+        this.modelMapper = modelMapper;
     }
 
     public EmployeeDTO getEmployeeById(Long id) {
         EmployeeEntity employeeEntity = employeeRepository.findById(id).orElse(null);
-        ModelMapper mapper = new ModelMapper();
-        return mapper.map(employeeEntity, EmployeeDTO.class);
+        return modelMapper.map(employeeEntity, EmployeeDTO.class);
     }
 
     public List<EmployeeEntity> getAllEmployees() {
