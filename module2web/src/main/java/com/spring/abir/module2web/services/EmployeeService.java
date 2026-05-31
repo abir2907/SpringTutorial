@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class EmployeeService {
@@ -24,8 +25,12 @@ public class EmployeeService {
         return modelMapper.map(employeeEntity, EmployeeDTO.class);
     }
 
-    public List<EmployeeEntity> getAllEmployees() {
-        return employeeRepository.findAll();
+    public List<EmployeeDTO> getAllEmployees() {
+        List<EmployeeEntity> employeeEntities = employeeRepository.findAll();
+        return employeeEntities
+                .stream()
+                .map(employeeEntity -> modelMapper.map(employeeEntity, EmployeeDTO.class))
+                .collect(Collectors.toList());
     }
 
     public EmployeeEntity createNewEmployee(EmployeeEntity inputEmployee) {
