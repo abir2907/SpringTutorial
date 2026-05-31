@@ -1,7 +1,6 @@
 package com.spring.abir.module2web.controllers;
 
 import com.spring.abir.module2web.dto.EmployeeDTO;
-import com.spring.abir.module2web.entities.EmployeeEntity;
 import com.spring.abir.module2web.services.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +29,7 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public EmployeeEntity createNewEmployee(@RequestBody EmployeeEntity inputEmployee) {
+    public EmployeeDTO createNewEmployee(@RequestBody EmployeeDTO inputEmployee) {
         return employeeService.createNewEmployee(inputEmployee);
     }
 
