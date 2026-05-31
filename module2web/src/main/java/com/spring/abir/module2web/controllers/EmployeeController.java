@@ -21,4 +21,13 @@ public class EmployeeController {
         return "Hi age " + age + ", sort by: " + sortBy;
     }
 
+    @PostMapping
+    public String createNewEmployee() {
+        return "Employee Added: POST";
+    }
+
+    @PutMapping
+    public String updateEmployeeById() {
+        return "Employee Updated: PUT";
+    }
 }
