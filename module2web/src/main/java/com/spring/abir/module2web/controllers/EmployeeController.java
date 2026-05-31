@@ -18,8 +18,8 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/employees")
-    public String getAllEmployees(@RequestParam Integer age,
-                                  @RequestParam String sortBy) {
+    public String getAllEmployees(@RequestParam(required = false) Integer age,
+                                  @RequestParam(required = false) String sortBy) {
         return "Hi age " + age + ", sort by: " + sortBy;
     }
 
