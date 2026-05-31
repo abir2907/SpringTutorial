@@ -33,8 +33,10 @@ public class EmployeeController {
         return employeeService.createNewEmployee(inputEmployee);
     }
 
-    @PutMapping
-    public String updateEmployeeById() {
-        return "Employee Updated: PUT";
+    @PutMapping(path = "/{employeeId}")
+    public EmployeeDTO updateEmployeeById(
+            @RequestBody EmployeeDTO employeeDTO,
+            @PathVariable(name = "employeeId") Long id) {
+        return employeeService.updateEmployeeById(id, employeeDTO);
     }
 }
