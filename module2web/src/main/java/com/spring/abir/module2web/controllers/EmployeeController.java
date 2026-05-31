@@ -1,6 +1,7 @@
 package com.spring.abir.module2web.controllers;
 
 import com.spring.abir.module2web.dto.EmployeeDTO;
+import com.spring.abir.module2web.entities.EmployeeEntity;
 import com.spring.abir.module2web.repositories.EmployeeRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,8 +19,8 @@ public class EmployeeController {
     }
 
     @GetMapping(path = "/{employeeId}")
-    public EmployeeDTO getEmployeeById(@PathVariable(name = "employeeId") Long id) {
-        return new EmployeeDTO(id, "Abir", "abir@gmail.com", 23, LocalDate.of(2026, 3, 1), true);
+    public EmployeeEntity getEmployeeById(@PathVariable(name = "employeeId") Long id) {
+        return employeeRepository.findById(id).orElse(null);
     }
 
     @GetMapping()
