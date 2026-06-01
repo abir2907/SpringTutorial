@@ -2,6 +2,7 @@ package com.spring.abir.module2web.services;
 
 import com.spring.abir.module2web.dto.EmployeeDTO;
 import com.spring.abir.module2web.entities.EmployeeEntity;
+import com.spring.abir.module2web.exceptions.ResourceNotFoundException;
 import com.spring.abir.module2web.repositories.EmployeeRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -44,25 +45,25 @@ public class EmployeeService {
     }
 
     public EmployeeDTO updateEmployeeById(Long id, EmployeeDTO employeeDTO) {
+        isExistsByEmployeeId(id);
         EmployeeEntity employeeEntity = modelMapper.map(employeeDTO, EmployeeEntity.class);
         employeeEntity.setId(id);
         EmployeeEntity savedEmployeeEntity = employeeRepository.save(employeeEntity);
         return modelMapper.map(savedEmployeeEntity, EmployeeDTO.class);
     }
 
-    public boolean isExistsByEmployeeId(Long id) {
-        return employeeRepository.existsById(id);
+    public void isExistsByEmployeeId(Long id) {
+        if(!employeeRepository.existsById(id)) throw new ResourceNotFoundException("Employee not found with id: " + id);
     }
 
     public boolean deleteEmployeeById(Long id) {
-        if(!isExistsByEmployeeId(id)) return false;
+        isExistsByEmployeeId(id);
         employeeRepository.deleteById(id);
         return true;
     }
 
     public EmployeeDTO updatePartialEmployeeById(Map<String, Object> updates, Long id) {
-        boolean exists = employeeRepository.existsById(id);
-        if(!isExistsByEmployeeId(id)) return null;
+        isExistsByEmployeeId(id);
         EmployeeEntity employeeEntity = employeeRepository.findById(id).get();
         updates.forEach((field, value) -> {
             Field fieldToBeUpdated = ReflectionUtils.findField(EmployeeEntity.class, field);
