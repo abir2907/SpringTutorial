@@ -1,5 +1,6 @@
 package com.spring.abir.module2web.dto;
 
+import com.spring.abir.module2web.annotations.EmployeeRoleValidation;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,7 +30,8 @@ public class EmployeeDTO {
     private Integer age;
 
     @NotBlank(message = "Role of the employee cannot be blank")
-    @Pattern(regexp = "^(ADMIN|USER)$", message = "Role of Employee can only be USER or ADMIN")
+    // @Pattern(regexp = "^(ADMIN|USER)$", message = "Role of Employee can only be USER or ADMIN")
+    @EmployeeRoleValidation
     private String role; // ADMIN, USER
 
     @NotNull(message = "Salary of the employee cannot be null")
