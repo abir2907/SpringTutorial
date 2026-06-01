@@ -10,12 +10,22 @@
         <module name="module1introduction" />
         <module name="module2web" />
       </profile>
+      <profile name="Annotation profile for module3jpa" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="module3jpa" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="module1introduction" options="-parameters" />
       <module name="module2web" options="-parameters" />
+      <module name="module3jpa" options="-parameters" />
     </option>
   </component>
 </project>
