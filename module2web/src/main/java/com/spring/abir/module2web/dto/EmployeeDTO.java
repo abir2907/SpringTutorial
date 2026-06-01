@@ -1,9 +1,12 @@
 package com.spring.abir.module2web.dto;
 
+import jakarta.validation.constraints.NotNull;
+
 import java.time.LocalDate;
 
 public class EmployeeDTO {
     private Long id;
+    @NotNull(message = "Required field in Employee: name")
     private String name;
     private String email;
     private Integer age;
