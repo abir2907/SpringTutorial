@@ -1,6 +1,7 @@
 package com.spring.abir.module2web.controllers;
 
 import com.spring.abir.module2web.dto.EmployeeDTO;
+import com.spring.abir.module2web.exceptions.ResourceNotFoundException;
 import com.spring.abir.module2web.services.EmployeeService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -27,7 +28,7 @@ public class EmployeeController {
         Optional<EmployeeDTO> employeeDTO = employeeService.getEmployeeById(id);
         return employeeDTO
                 .map(ResponseEntity::ok)
-                .orElseThrow(() -> new NoSuchElementException("Employee not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Employee not found with id: " + id));
     }
 
     @GetMapping()
