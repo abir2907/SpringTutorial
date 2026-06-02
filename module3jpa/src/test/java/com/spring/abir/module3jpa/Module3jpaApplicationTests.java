@@ -34,7 +34,7 @@ class Module3jpaApplicationTests {
 
 	@Test
 	void getRepository() {
-        List<ProductEntity> productEntityList = productRepository.findAll();
+        List<ProductEntity> productEntityList = productRepository.findByTitle("Pepsi");
 		System.out.println(productEntityList);
 	}
 
