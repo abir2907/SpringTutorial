@@ -55,7 +55,7 @@ class Module3jpaApplicationTests {
 	void getSingleFromRepository() {
 		// We have defined a constraint on title and price, therefore we can be sure that each pair of title & price will be unique
 		// Hence we can get a single entity instead of a List
-		Optional<ProductEntity> productEntity = productRepository.findByTitleAndPrice("Mazza", BigDecimal.valueOf(16.4));
+		Optional<String> productEntity = productRepository.findByTitleAndPrice("Mazza", BigDecimal.valueOf(16.4));
 		productEntity.ifPresent(System.out::println);
 	}
 
