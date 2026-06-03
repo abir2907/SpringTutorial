@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/module1introduction/pom.xml" />
         <option value="$PROJECT_DIR$/module2web/pom.xml" />
         <option value="$PROJECT_DIR$/module3jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/module3hospital/pom.xml" />
       </list>
     </option>
   </component>
