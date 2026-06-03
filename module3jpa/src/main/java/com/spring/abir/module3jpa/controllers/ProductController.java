@@ -26,7 +26,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public Page<ProductEntity> getAllProducts(@RequestParam(defaultValue = "id") String sortBy,
+    public List<ProductEntity> getAllProducts(@RequestParam(defaultValue = "id") String sortBy,
                                               @RequestParam(defaultValue = "1") Integer pageNumber) {
         // return productRepository.findAllBy(Sort.by(Sort.Direction.DESC, sortBy, "price", "quantity"));
         /*
@@ -38,6 +38,6 @@ public class ProductController {
 
         Pageable pageable = PageRequest.of(pageNumber, PAGE_SIZE);
 
-        return productRepository.findAll(pageable);
+        return productRepository.findAll(pageable).getContent();
     }
 }
