@@ -36,7 +36,10 @@ public class ProductController {
         ));
         */
 
-        Pageable pageable = PageRequest.of(pageNumber, PAGE_SIZE);
+        Pageable pageable = PageRequest.of(
+                pageNumber,
+                PAGE_SIZE,
+                Sort.by(sortBy));
 
         return productRepository.findAll(pageable).getContent();
     }
