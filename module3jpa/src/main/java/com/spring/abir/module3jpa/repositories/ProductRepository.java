@@ -1,6 +1,7 @@
 package com.spring.abir.module3jpa.repositories;
 
 import com.spring.abir.module3jpa.entities.ProductEntity;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -34,5 +35,5 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
     @Query("select e.title from ProductEntity e where e.title = :title and e.price = :price")
     Optional<String> findByTitleAndPrice(String title, BigDecimal price);
 
-    List<ProductEntity> findAllByOrderByPriceAsc();
+    List<ProductEntity> findAllBy(Sort sort);
 }
