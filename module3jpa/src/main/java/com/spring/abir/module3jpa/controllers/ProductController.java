@@ -22,6 +22,6 @@ public class ProductController {
 
     @GetMapping
     public List<ProductEntity> getAllProducts(@RequestParam(defaultValue = "id") String sortBy) {
-        return productRepository.findAllBy(Sort.by(sortBy));
+        return productRepository.findAllBy(Sort.by(Sort.Direction.DESC, sortBy, "price", "quantity"));
     }
 }
