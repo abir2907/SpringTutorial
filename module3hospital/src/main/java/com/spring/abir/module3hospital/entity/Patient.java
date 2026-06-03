@@ -1,5 +1,6 @@
 package com.spring.abir.module3hospital.entity;
 
+import com.spring.abir.module3hospital.entity.type.BloodGroupType;
 import jakarta.persistence.*;
 import jakarta.persistence.Id;
 import lombok.Getter;
@@ -28,7 +29,8 @@ public class Patient {
 
     private String gender;
 
-    private String bloodGroup;
+    @Enumerated(value = EnumType.STRING)
+    private BloodGroupType bloodGroup;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
