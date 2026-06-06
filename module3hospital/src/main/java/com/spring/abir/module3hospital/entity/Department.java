@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
@@ -23,5 +26,8 @@ public class Department {
     @OneToOne
     @JoinColumn(nullable = false)
     private Doctor headDoctor; // owning side
+
+    @ManyToMany(mappedBy = "departmentSet")
+    private Set<Doctor> doctorSet = new HashSet<>(); // inverse side
 
 }

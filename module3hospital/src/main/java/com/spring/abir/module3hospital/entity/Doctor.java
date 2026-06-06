@@ -34,4 +34,12 @@ public class Doctor {
 
     @OneToOne(mappedBy = "headDoctor")
     private Department department; // inverse side
+
+    @ManyToMany
+    @JoinTable(
+            name = "doctor_department",
+            joinColumns = @JoinColumn(name = "doctor_id"),
+            inverseJoinColumns = @JoinColumn(name = "department_id")
+    )
+    private Set<Department> departmentSet = new HashSet<>(); // owning side
 }
