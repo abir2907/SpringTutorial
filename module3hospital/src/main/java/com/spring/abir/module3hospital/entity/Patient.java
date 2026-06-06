@@ -9,6 +9,9 @@ import lombok.ToString;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
@@ -38,4 +41,7 @@ public class Patient {
     @OneToOne
     @JoinColumn(name = "patient_insurance", unique = true)
     private Insurance insurance; // owning side
+
+    @OneToMany(mappedBy = "patient")
+    private Set<Appointment> appointments = new HashSet<>(); // inverse side
 }
