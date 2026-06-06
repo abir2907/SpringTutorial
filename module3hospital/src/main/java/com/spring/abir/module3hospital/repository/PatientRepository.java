@@ -1,5 +1,6 @@
 package com.spring.abir.module3hospital.repository;
 
+import com.spring.abir.module3hospital.dto.BloodGroupStats;
 import com.spring.abir.module3hospital.dto.CPatientInfo;
 import com.spring.abir.module3hospital.dto.IPatientInfo;
 import com.spring.abir.module3hospital.entity.Patient;
@@ -14,4 +15,7 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
 
     @Query("select new com.spring.abir.module3hospital.dto.CPatientInfo(p.id, p.name) from Patient p")
     List<CPatientInfo> getAllPatientsInfoConcrete();
+
+    @Query("select new com.spring.abir.module3hospital.dto.BloodGroupStats(p.bloodGroup, COUNT(p)) from Patient p group by p.bloodGroup order by COUNT(p) desc")
+    List<BloodGroupStats> getBloodGroupStats();
 }

@@ -1,5 +1,6 @@
 package com.spring.abir.module3hospital;
 
+import com.spring.abir.module3hospital.dto.BloodGroupStats;
 import com.spring.abir.module3hospital.dto.CPatientInfo;
 import com.spring.abir.module3hospital.dto.IPatientInfo;
 import com.spring.abir.module3hospital.repository.PatientRepository;
@@ -19,9 +20,10 @@ public class PatientServiceTest {
     public void testPatient() {
         // List<Patient> patientList = patientRepository.findAll();
         // List<IPatientInfo> patientList = patientRepository.getAllPatientsInfo();
-        List<CPatientInfo> patientList = patientRepository.getAllPatientsInfoConcrete();
+        // List<CPatientInfo> patientList = patientRepository.getAllPatientsInfoConcrete();
+        List<BloodGroupStats> patientList = patientRepository.getBloodGroupStats();
 
-        for(CPatientInfo p : patientList) {
+        for(BloodGroupStats p : patientList) {
             System.out.println(p);
         }
     }
