@@ -2,6 +2,7 @@ package com.spring.abir.module3hospital;
 
 import com.spring.abir.module3hospital.entity.Insurance;
 import com.spring.abir.module3hospital.service.InsuranceService;
+import com.spring.abir.module3hospital.service.PatientService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,6 +15,9 @@ public class InsuranceTest {
     @Autowired
     private InsuranceService insuranceService;
 
+    @Autowired
+    private PatientService patientService;
+
     @Test
     public void testAssignInsuranceToPatient() {
         Insurance insurance = Insurance.builder()
@@ -24,5 +28,7 @@ public class InsuranceTest {
 
         var updatedInsurance = insuranceService.assignInsuranceToPatient(insurance, 1L);
         System.out.println(updatedInsurance);
+
+        patientService.deletePatient(1L);
     }
 }
