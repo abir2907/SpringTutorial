@@ -4,8 +4,11 @@ import com.spring.abir.module3hospital.dto.BloodGroupStats;
 import com.spring.abir.module3hospital.dto.CPatientInfo;
 import com.spring.abir.module3hospital.dto.IPatientInfo;
 import com.spring.abir.module3hospital.entity.Patient;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -18,4 +21,10 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
 
     @Query("select new com.spring.abir.module3hospital.dto.BloodGroupStats(p.bloodGroup, COUNT(p)) from Patient p group by p.bloodGroup order by COUNT(p) desc")
     List<BloodGroupStats> getBloodGroupStats();
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE Patient p set p.name = :name where p.id = :id")
+    int updatePatientNameWithId(@Param("name") String name, @Param("id") Long id);
+    // This will return the number of rows affected
 }

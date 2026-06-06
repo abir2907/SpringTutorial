@@ -21,11 +21,15 @@ public class PatientServiceTest {
         // List<Patient> patientList = patientRepository.findAll();
         // List<IPatientInfo> patientList = patientRepository.getAllPatientsInfo();
         // List<CPatientInfo> patientList = patientRepository.getAllPatientsInfoConcrete();
-        List<BloodGroupStats> patientList = patientRepository.getBloodGroupStats();
+        // List<BloodGroupStats> patientList = patientRepository.getBloodGroupStats();
 
+        System.out.println(patientRepository.updatePatientNameWithId("Rohan Patel", 1L));
+
+        /*
         for(BloodGroupStats p : patientList) {
             System.out.println(p);
         }
+        */
     }
 
 }
