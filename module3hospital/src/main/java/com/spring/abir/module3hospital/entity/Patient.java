@@ -38,10 +38,12 @@ public class Patient {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @OneToOne
+    @ToString.Exclude
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "patient_insurance", unique = true)
     private Insurance insurance; // owning side
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "patient")
     private Set<Appointment> appointments = new HashSet<>(); // inverse side
 }
