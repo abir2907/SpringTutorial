@@ -26,4 +26,8 @@ public class Appointment {
     @ManyToOne
     @JoinColumn(nullable = false)
     private Patient patient; // owning side
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Doctor doctor; // owning side
 }
