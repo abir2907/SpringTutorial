@@ -16,10 +16,11 @@ public class PatientServiceTest {
 
     @Test
     public void testPatient() {
-        List<Patient> patientList = patientRepository.findAll();
+        // List<Patient> patientList = patientRepository.findAll();
+        List<IPatientInfo> patientList = patientRepository.getAllPatientsInfo();
 
-        for(Patient p : patientList) {
-            System.out.println(p);
+        for(IPatientInfo p : patientList) {
+            System.out.println(p.getId() + " " + p.getName() + " " + p.getEmail());
         }
     }
 
