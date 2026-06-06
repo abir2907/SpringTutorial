@@ -10,7 +10,8 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Builder
+@ToString
 public class Appointment {
 
     @Id
@@ -25,9 +26,11 @@ public class Appointment {
 
     @ManyToOne
     @JoinColumn(nullable = false)
+    @ToString.Exclude
     private Patient patient; // owning side
 
     @ManyToOne
     @JoinColumn(nullable = false)
+    @ToString.Exclude
     private Doctor doctor; // owning side
 }
