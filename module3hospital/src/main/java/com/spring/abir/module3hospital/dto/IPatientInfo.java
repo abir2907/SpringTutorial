@@ -1,4 +1,4 @@
-package com.spring.abir.module3hospital;
+package com.spring.abir.module3hospital.dto;
 
 public interface IPatientInfo {
 
