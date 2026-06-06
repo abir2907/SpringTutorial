@@ -39,7 +39,7 @@ public class Patient {
     private LocalDateTime createdAt;
 
     @ToString.Exclude
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "patient_insurance", unique = true)
     private Insurance insurance; // owning side
 
