@@ -31,4 +31,7 @@ public class Doctor {
 
     @OneToMany(mappedBy = "doctor")
     private Set<Appointment> appointmentSet = new HashSet<>(); // inverse side
+
+    @OneToOne(mappedBy = "headDoctor")
+    private Department department; // inverse side
 }

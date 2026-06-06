@@ -20,4 +20,8 @@ public class Department {
     @Column(nullable = false, unique = true, length = 100)
     private String name;
 
+    @OneToOne
+    @JoinColumn(nullable = false)
+    private Doctor headDoctor; // owning side
+
 }
