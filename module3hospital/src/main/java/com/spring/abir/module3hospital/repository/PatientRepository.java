@@ -27,4 +27,7 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
     @Query("UPDATE Patient p set p.name = :name where p.id = :id")
     int updatePatientNameWithId(@Param("name") String name, @Param("id") Long id);
     // This will return the number of rows affected
+
+    @Query("select DISTINCT p from Patient p left join fetch p.appointments")
+    List<Patient> getAllPatientsWithAppointments();
 }
