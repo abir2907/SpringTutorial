@@ -44,6 +44,6 @@ public class Patient {
     private Insurance insurance; // owning side
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
     private Set<Appointment> appointments = new HashSet<>(); // inverse side
 }
