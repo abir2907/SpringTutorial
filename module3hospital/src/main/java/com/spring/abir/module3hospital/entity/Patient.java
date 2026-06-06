@@ -34,4 +34,7 @@ public class Patient {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+    @OneToOne
+    private Insurance insurance;
 }
