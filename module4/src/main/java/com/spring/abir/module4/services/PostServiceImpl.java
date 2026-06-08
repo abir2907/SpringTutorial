@@ -2,6 +2,7 @@ package com.spring.abir.module4.services;
 
 import com.spring.abir.module4.dto.PostDTO;
 import com.spring.abir.module4.entities.PostEntity;
+import com.spring.abir.module4.exceptions.ResourceNotFoundException;
 import com.spring.abir.module4.repositories.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -30,5 +31,13 @@ public class PostServiceImpl implements PostService{
     public PostDTO createNewPost(PostDTO inputPost) {
         PostEntity postEntity = modelMapper.map(inputPost, PostEntity.class);
         return modelMapper.map(postRepository.save(postEntity), PostDTO.class);
+    }
+
+    @Override
+    public PostDTO getPostById(Long postId) {
+        PostEntity postEntity = postRepository
+                .findById(postId)
+                .orElseThrow(() -> new ResourceNotFoundException("Post not found with id " + postId));
+        return modelMapper.map(postEntity, PostDTO.class);
     }
 }
