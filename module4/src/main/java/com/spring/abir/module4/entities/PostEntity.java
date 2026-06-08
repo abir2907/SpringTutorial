@@ -20,4 +20,19 @@ public class PostEntity extends AuditableEntity {
 
     private String title;
     private String description;
+
+    @PrePersist
+    void beforeSave() {
+
+    }
+
+    @PreUpdate
+    void beforeUpdate() {
+
+    }
+
+    @PreRemove
+    void beforeDelete() {
+
+    }
 }
