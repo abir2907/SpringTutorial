@@ -3,8 +3,10 @@ package com.spring.abir.module4.clients.impl;
 import com.spring.abir.module4.advice.ApiResponse;
 import com.spring.abir.module4.clients.EmployeeClient;
 import com.spring.abir.module4.dto.EmployeeDTO;
+import com.spring.abir.module4.exceptions.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
@@ -54,6 +56,10 @@ public class EmployeeClientImpl implements EmployeeClient {
                     .uri("/employees")
                     .body(employeeDTO)
                     .retrieve()
+                    .onStatus(HttpStatusCode::is4xxClientError, (req, res) -> {
+                        System.out.println(new String(res.getBody().readAllBytes()));
+                        throw new ResourceNotFoundException("Could not create the employee");
+                    })
                     .body(new ParameterizedTypeReference<>() {
                     });
             return employeeDTOApiResponse.getData();

@@ -36,7 +36,7 @@ class Module4ApplicationTests {
 	@Test
 	@Order(1)
 	void createNewEmployeeTest() {
-		EmployeeDTO employeeDTO = new EmployeeDTO(null, "Abir", "abir@gmail.com", 23,
+		EmployeeDTO employeeDTO = new EmployeeDTO(null, "Abir", "abir@gmail.com", 2,
 				"USER", 5000.0, LocalDate.of(2020,12,1), true);
 		EmployeeDTO savedEmployeeDTO = employeeClient.createNewEmployee(employeeDTO);
 		System.out.println(savedEmployeeDTO);
