@@ -5,6 +5,8 @@ import com.spring.abir.module4.clients.EmployeeClient;
 import com.spring.abir.module4.dto.EmployeeDTO;
 import com.spring.abir.module4.exceptions.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Service;
@@ -18,8 +20,17 @@ public class EmployeeClientImpl implements EmployeeClient {
 
     private final RestClient restClient;
 
+    Logger log = LoggerFactory.getLogger(EmployeeClientImpl.class);
+
     @Override
     public List<EmployeeDTO> getAllEmployees() {
+
+        log.error("error log");
+        log.warn("warn log");
+        log.info("info log");
+        log.debug("debug log");
+        log.trace("trace log");
+
         try {
             ApiResponse<List<EmployeeDTO>> employeeDTOList = restClient
                     .get()
