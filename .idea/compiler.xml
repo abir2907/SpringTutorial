@@ -10,25 +10,26 @@
         <module name="module1introduction" />
         <module name="module2web" />
       </profile>
-      <profile name="Annotation profile for module3jpa" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-        </processorPath>
-        <module name="module3hospital" />
-        <module name="module3jpa" />
-      </profile>
       <profile name="Annotation profile for module4" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
         <module name="module4" />
+        <module name="module3hospital" />
+        <module name="module3jpa" />
+      </profile>
+      <profile name="Annotation profile for module5security" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
+        </processorPath>
+        <module name="module5security" />
       </profile>
     </annotationProcessing>
   </component>
@@ -39,6 +40,7 @@
       <module name="module3hospital" options="-parameters" />
       <module name="module3jpa" options="-parameters" />
       <module name="module4" options="-parameters" />
+      <module name="module5security" options="-parameters" />
     </option>
   </component>
 </project>
