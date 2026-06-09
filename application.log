@@ -1,0 +1,36 @@
+2026-06-09T09:59:21.058+05:30  INFO 20104 --- [module4] [restartedMain] c.s.abir.module4.Module4Application      : Starting Module4Application using Java 25.0.2 with PID 20104 (E:\SpringBoot\Codes\SpringTutorial\module4\target\classes started by ABIR in E:\SpringBoot\Codes\SpringTutorial)
+2026-06-09T09:59:21.061+05:30  INFO 20104 --- [module4] [restartedMain] c.s.abir.module4.Module4Application      : No active profile set, falling back to 1 default profile: "default"
+2026-06-09T09:59:21.123+05:30  INFO 20104 --- [module4] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-09T09:59:21.123+05:30  INFO 20104 --- [module4] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-09T09:59:21.858+05:30  INFO 20104 --- [module4] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-09T09:59:21.931+05:30  INFO 20104 --- [module4] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interface.
+2026-06-09T09:59:22.587+05:30  INFO 20104 --- [module4] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9000 (http)
+2026-06-09T09:59:22.604+05:30  INFO 20104 --- [module4] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-09T09:59:22.604+05:30  INFO 20104 --- [module4] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-09T09:59:22.656+05:30  INFO 20104 --- [module4] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1531 ms
+2026-06-09T09:59:22.846+05:30  INFO 20104 --- [module4] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-09T09:59:22.929+05:30  INFO 20104 --- [module4] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-09T09:59:23.246+05:30  INFO 20104 --- [module4] [restartedMain] o.h.e.boot.internal.EnversServiceImpl    : Envers integration enabled? : true
+2026-06-09T09:59:23.467+05:30  INFO 20104 --- [module4] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-09T09:59:23.502+05:30  INFO 20104 --- [module4] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-09T09:59:23.729+05:30  INFO 20104 --- [module4] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@392b14e7
+2026-06-09T09:59:23.731+05:30  INFO 20104 --- [module4] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-09T09:59:23.844+05:30  INFO 20104 --- [module4] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/prod-ready-features?useSSL=false]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: prod-ready-features/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-09T09:59:24.091+05:30  INFO 20104 --- [module4] [restartedMain] o.h.e.c.i.m.AuditMetadataGenerator       : Adding properties for entity: com.spring.abir.module4.entities.PostEntity
+2026-06-09T09:59:24.828+05:30  INFO 20104 --- [module4] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-09T09:59:25.223+05:30  INFO 20104 --- [module4] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-09T09:59:25.673+05:30  INFO 20104 --- [module4] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-09T09:59:25.837+05:30  WARN 20104 --- [module4] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-09T09:59:26.138+05:30  INFO 20104 --- [module4] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9000 (http) with context path '/'
+2026-06-09T09:59:26.143+05:30  INFO 20104 --- [module4] [restartedMain] c.s.abir.module4.Module4Application      : Started Module4Application in 5.529 seconds (process running for 9.464)
