@@ -288,3 +288,79 @@ Caused by: java.nio.channels.ClosedChannelException
 2026-06-09T10:01:31.737+05:30  INFO 21560 --- [module4] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-09T10:01:31.739+05:30  INFO 21560 --- [module4] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-06-09T10:01:31.746+05:30  INFO 21560 --- [module4] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-06-09 10:11:19.758 [main] INFO  c.s.a.m.Module4ApplicationTests - Starting Module4ApplicationTests using Java 25.0.2 with PID 23472 (started by ABIR in E:\SpringBoot\Codes\SpringTutorial\module4)
+2026-06-09 10:11:19.759 [main] INFO  c.s.a.m.Module4ApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-06-09 10:11:20.422 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-09 10:11:20.492 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interface.
+2026-06-09 10:11:20.969 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-09 10:11:21.035 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-09 10:11:21.373 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2026-06-09 10:11:21.609 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-09 10:11:21.650 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-09 10:11:21.807 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@67fd2e17
+2026-06-09 10:11:21.809 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-09 10:11:21.873 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/prod-ready-features?useSSL=false]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: prod-ready-features/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-09 10:11:22.042 [main] INFO  o.h.e.c.i.m.AuditMetadataGenerator - Adding properties for entity: com.spring.abir.module4.entities.PostEntity
+2026-06-09 10:11:22.717 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-09 10:11:23.063 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-09 10:11:23.344 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-09 10:11:23.572 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-09 10:11:24.071 [main] INFO  c.s.a.m.Module4ApplicationTests - Started Module4ApplicationTests in 4.724 seconds (process running for 6.143)
+2026-06-09 10:11:24.406 [main] TRACE c.s.a.m.c.impl.EmployeeClientImpl - Trying to create Employee with information EmployeeDTO(id=null, name=Abir, email=abir@gmail.com, age=24, role=USER, salary=5000.0, dateOfJoining=2020-12-01, isActive=true)
+2026-06-09 10:11:24.567 [main] TRACE c.s.a.m.c.impl.EmployeeClientImpl - Successfully created a new employee: EmployeeDTO(id=1203, name=Abir, email=abir@gmail.com, age=24, role=USER, salary=5000.0, dateOfJoining=2020-12-01, isActive=true)
+2026-06-09 10:11:24.581 [main] TRACE c.s.a.m.c.impl.EmployeeClientImpl - Trying to get Employee by Id in getEmployeeById with id: 203
+2026-06-09 10:11:24.595 [main] INFO  c.s.a.m.c.impl.EmployeeClientImpl - Trying to retrieve all employees in getALlEmployees
+2026-06-09 10:11:24.595 [main] DEBUG c.s.a.m.c.impl.EmployeeClientImpl - Attempting to call the restClient Method
+2026-06-09 10:11:24.613 [main] INFO  c.s.a.m.c.impl.EmployeeClientImpl - Successfully retrieved the employees in getAllEmployees
+2026-06-09 10:11:24.628 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-09 10:11:24.630 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-09 10:11:24.638 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-09 10:18:28.384 [main] INFO  c.s.a.m.Module4ApplicationTests - Starting Module4ApplicationTests using Java 25.0.2 with PID 26352 (started by ABIR in E:\SpringBoot\Codes\SpringTutorial\module4)
+2026-06-09 10:18:28.385 [main] INFO  c.s.a.m.Module4ApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-06-09 10:18:29.130 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-09 10:18:29.195 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 1 JPA repository interface.
+2026-06-09 10:18:29.732 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-09 10:18:29.793 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-09 10:18:30.146 [main] INFO  o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2026-06-09 10:18:30.346 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-09 10:18:30.389 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-09 10:18:30.632 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7341baa3
+2026-06-09 10:18:30.634 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-09 10:18:30.721 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/prod-ready-features?useSSL=false]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: prod-ready-features/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-09 10:18:30.931 [main] INFO  o.h.e.c.i.m.AuditMetadataGenerator - Adding properties for entity: com.spring.abir.module4.entities.PostEntity
+2026-06-09 10:18:31.638 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-09 10:18:31.918 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-09 10:18:32.270 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-09 10:18:32.565 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-09 10:18:33.143 [main] INFO  c.s.a.m.Module4ApplicationTests - Started Module4ApplicationTests in 5.177 seconds (process running for 6.554)
+2026-06-09 10:18:33.521 [main] TRACE c.s.a.m.c.impl.EmployeeClientImpl - Trying to create Employee with information EmployeeDTO(id=null, name=Abir, email=abir@gmail.com, age=24, role=USER, salary=5000.0, dateOfJoining=2020-12-01, isActive=true)
+2026-06-09 10:18:33.675 [main] TRACE c.s.a.m.c.impl.EmployeeClientImpl - Successfully created a new employee: EmployeeDTO(id=1253, name=Abir, email=abir@gmail.com, age=24, role=USER, salary=5000.0, dateOfJoining=2020-12-01, isActive=true)
+2026-06-09 10:18:33.691 [main] TRACE c.s.a.m.c.impl.EmployeeClientImpl - Trying to get Employee by Id in getEmployeeById with id: 203
+2026-06-09 10:18:33.702 [main] INFO  c.s.a.m.c.impl.EmployeeClientImpl - Trying to retrieve all employees in getALlEmployees
+2026-06-09 10:18:33.703 [main] DEBUG c.s.a.m.c.impl.EmployeeClientImpl - Attempting to call the restClient Method
+2026-06-09 10:18:33.721 [main] INFO  c.s.a.m.c.impl.EmployeeClientImpl - Successfully retrieved the employees in getAllEmployees
+2026-06-09 10:18:33.733 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-09 10:18:33.736 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-09 10:18:33.742 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
